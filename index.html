@@ -13,60 +13,50 @@
 
 </head>
 
-<script src="js/script.js"></script>
 <body>
-
 
 <main class="login-box">
 
-
 <div class="logo">
-    🤝
+🤝
 </div>
-
 
 <h1>
 جارك أولى 🌿
 </h1>
 
-
 <p>
 أهلاً بيك، سجل دخولك عشان نبدأ الخير.
 </p>
 
-
-
 <form>
-
 
 <label>
 اسم المستخدم
 </label>
 
-<input 
-type="text" 
+<input
+id="username"
+type="text"
 placeholder="اكتب اسمك">
-
-
 
 <label>
 كلمة المرور
 </label>
 
-<input 
+<input
+id="password"
 type="password"
 placeholder="اكتب كلمة المرور">
 
-
-
-<button>
+<button
+type="button"
+class="btn"
+onclick="login()">
 دخول ✨
 </button>
 
-
 </form>
-
-
 
 <p class="create">
 
@@ -74,14 +64,13 @@ placeholder="اكتب كلمة المرور">
 
 <a href="register.html">
 إنشاء حساب
-
 </a>
 
 </p>
 
-
 </main>
 
+<script src="js/script.js"></script>
 
 </body>
 
