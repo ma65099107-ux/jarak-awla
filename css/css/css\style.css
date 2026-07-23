@@ -1,0 +1,467 @@
+/* ==========================
+   جارك أولى - Main Style
+========================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:Tahoma, Arial, sans-serif;
+
+    background:#F8F5F0;
+
+    color:#333;
+
+    line-height:1.7;
+
+}
+
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+/* ==========================
+        Header
+========================== */
+
+
+.page-header{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+.page-header h1{
+
+    color:#5F8D4E;
+
+    margin-bottom:10px;
+
+}
+
+
+/* ==========================
+        Navbar
+========================== */
+
+
+.navbar{
+
+    background:white;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+.brand{
+
+    color:#5F8D4E;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+
+nav a{
+
+    margin:0 8px;
+
+    color:#555;
+
+}
+
+
+nav a:hover{
+
+    color:#5F8D4E;
+
+}
+
+
+
+/* ==========================
+        Home Cards
+========================== */
+
+
+.services{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    padding:30px;
+
+}
+
+
+
+.service-card,
+.skill-card,
+.profile-card,
+.about-card,
+.form-container{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.service-card{
+
+    width:300px;
+
+    text-align:center;
+
+}
+
+
+
+.service-card h2{
+
+    color:#5F8D4E;
+
+}
+
+
+
+.service-card a,
+button{
+
+    display:inline-block;
+
+    background:#5F8D4E;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+}
+
+
+
+button:hover,
+.service-card a:hover{
+
+    background:#4C733D;
+
+}
+
+
+
+/* ==========================
+        Skills
+========================== */
+
+
+.skills-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    padding:30px;
+
+}
+
+
+
+.skill-card{
+
+    width:280px;
+
+}
+
+
+
+.skill-card h2{
+
+    color:#5F8D4E;
+
+}
+
+
+
+/* ==========================
+        Forms
+========================== */
+
+
+.form-container{
+
+    max-width:500px;
+
+    margin:20px auto;
+
+}
+
+
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+label{
+
+    margin-top:15px;
+
+    color:#4C733D;
+
+    font-weight:bold;
+
+}
+
+
+input,
+textarea{
+
+    padding:12px;
+
+    margin-top:5px;
+
+    border:1px solid #E6DDCF;
+
+    border-radius:15px;
+
+    font-family:inherit;
+
+}
+
+
+
+textarea{
+
+    height:120px;
+
+}
+
+
+
+/* ==========================
+        Profile
+========================== */
+
+
+.profile-card{
+
+    max-width:450px;
+
+    margin:20px auto;
+
+    text-align:center;
+
+}
+
+
+
+.profile-image{
+
+    width:90px;
+
+    height:90px;
+
+    background:#5F8D4E;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    font-size:45px;
+
+}
+
+
+
+/* ==========================
+        About
+========================== */
+
+
+.about-card{
+
+    max-width:600px;
+
+    margin:30px auto;
+
+    text-align:center;
+
+}
+
+
+
+/* ==========================
+        Mobile
+========================== */
+
+
+@media(max-width:700px){
+
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+nav{
+
+    text-align:center;
+
+}
+
+
+.service-card,
+.skill-card{
+
+    width:90%;
+
+}
+
+
+}
+/* =====================
+       Login Page
+===================== */
+
+
+.login-box{
+
+    background:white;
+
+    width:90%;
+
+    max-width:420px;
+
+    margin:60px auto;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+}
+
+
+.login-box .logo{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    background:#5F8D4E;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:45px;
+
+}
+
+
+
+.login-box h1{
+
+    color:#5F8D4E;
+
+    margin:15px 0;
+
+}
+
+
+.login-box form{
+
+    margin-top:25px;
+
+}
+
+
+.create{
+
+    margin-top:20px;
+
+}
+
+
+.create a{
+
+    color:#5F8D4E;
+
+    font-weight:bold;
+
+}
