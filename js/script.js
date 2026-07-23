@@ -1,11 +1,13 @@
 // ==============================
-// جارك أولى
-// JavaScript
+// جارك أولى - JavaScript
 // ==============================
 
-// عرض المهارات عند فتح الصفحة
+
+// عرض المهارات والطلبات عند فتح الصفحة
 window.onload = function () {
 
+
+    // عرض المهارات
     let container = document.getElementById("skillsContainer");
 
     if (container) {
@@ -35,12 +37,43 @@ window.onload = function () {
 
     }
 
+
+
+    // عرض طلبات المساعدة
+    let requestsContainer = document.getElementById("requestsContainer");
+
+    if (requestsContainer) {
+
+        let requests = JSON.parse(localStorage.getItem("requests")) || [];
+
+        if (requests.length > 0) {
+
+            requestsContainer.innerHTML = "";
+
+            requests.forEach(function(item){
+
+                requestsContainer.innerHTML += `
+                    <div class="item">
+                        📢 <strong>${item.title}</strong><br>
+                        📝 ${item.problem}<br>
+                        📌 ${item.type}<br>
+                        📍 ${item.city}<br>
+                        📞 ${item.contact}
+                    </div>
+                    <br>
+                `;
+
+            });
+
+        }
+
+    }
+
 };
 
 
-// ==============================
+
 // تسجيل الدخول
-// ==============================
 function login(){
 
     let username = document.getElementById("username").value;
@@ -61,9 +94,8 @@ function login(){
 
 
 
-// ==============================
+
 // إنشاء حساب
-// ==============================
 function register(){
 
     let name=document.getElementById("name").value;
@@ -92,9 +124,7 @@ function register(){
 
 
 
-// ==============================
 // نشر مهارة
-// ==============================
 function addService(){
 
     let name=document.getElementById("name").value;
@@ -103,6 +133,7 @@ function addService(){
     let city=document.getElementById("city").value;
     let phone=document.getElementById("phone").value;
 
+
     if(name==="" || skill==="" || description==="" || city==="" || phone===""){
 
         alert("يرجى ملء جميع الحقول");
@@ -110,7 +141,9 @@ function addService(){
 
     }
 
+
     let skills=JSON.parse(localStorage.getItem("skills")) || [];
+
 
     skills.push({
 
@@ -122,9 +155,12 @@ function addService(){
 
     });
 
+
     localStorage.setItem("skills",JSON.stringify(skills));
 
+
     alert("تم نشر المساعدة بنجاح 🌿");
+
 
     window.location.href="home.html";
 
@@ -132,20 +168,62 @@ function addService(){
 
 
 
-// ==============================
-// نشر طلب
-// ==============================
+
+// نشر طلب مساعدة
 function addHelpRequest(){
 
+
+    let title=document.getElementById("title").value;
+    let problem=document.getElementById("problem").value;
+    let type=document.getElementById("type").value;
+    let city=document.getElementById("cityHelp").value;
+    let contact=document.getElementById("contact").value;
+
+
+
+    if(title==="" || problem==="" || type==="" || city==="" || contact===""){
+
+        alert("يرجى ملء جميع الحقول");
+
+        return;
+
+    }
+
+
+
+    let requests=JSON.parse(localStorage.getItem("requests")) || [];
+
+
+
+    requests.push({
+
+        title:title,
+        problem:problem,
+        type:type,
+        city:city,
+        contact:contact
+
+    });
+
+
+
+    localStorage.setItem("requests",JSON.stringify(requests));
+
+
+
     alert("تم نشر طلب المساعدة بنجاح 🆘");
+
+
+
+    window.location.href="home.html";
 
 }
 
 
 
-// ==============================
+
+
 // التواصل
-// ==============================
 function contactPerson(){
 
     window.location.href="contact.html";
@@ -154,21 +232,23 @@ function contactPerson(){
 
 
 
-// ==============================
+
 // إرسال رسالة
-// ==============================
 function sendMessage(){
 
     let name=document.getElementById("contactName").value;
     let message=document.getElementById("message").value;
     let phone=document.getElementById("contactPhone").value;
 
+
     if(name==="" || message==="" || phone===""){
 
         alert("يرجى ملء جميع البيانات");
+
         return;
 
     }
+
 
     alert("تم إرسال الرسالة بنجاح 💌");
 
@@ -178,9 +258,8 @@ function sendMessage(){
 
 
 
-// ==============================
+
 // تسجيل الخروج
-// ==============================
 function logout(){
 
     if(confirm("هل تريد تسجيل الخروج؟")){
