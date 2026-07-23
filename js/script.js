@@ -3,20 +3,14 @@
 // =============================
 
 
-// رسالة عند تحميل الموقع
-window.onload = function () {
-    console.log("مرحباً بك في جارك أولى 🌿");
-};
-
-
 // تسجيل الدخول
 function login() {
 
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
 
-    if (username.value === "" || password.value === "") {
+    if (username === "" || password === "") {
 
         alert("يرجى إدخال اسم المستخدم وكلمة المرور");
 
@@ -25,6 +19,7 @@ function login() {
         alert("تم تسجيل الدخول بنجاح 🌿");
 
         window.location.href = "home.html";
+
     }
 
 }
@@ -34,19 +29,29 @@ function login() {
 // إنشاء حساب
 function register() {
 
-    let name = document.getElementById("name");
-    let password = document.getElementById("password");
+    let name = document.getElementById("name").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
 
 
-    if (name.value === "" || password.value === "") {
+    if (name === "" || password === "" || confirmPassword === "") {
 
-        alert("يرجى ملء البيانات المطلوبة");
+        alert("يرجى ملء كل البيانات المطلوبة");
 
-    } else {
+    }
+
+    else if (password !== confirmPassword) {
+
+        alert("كلمة المرور غير متطابقة");
+
+    }
+
+    else {
 
         alert("تم إنشاء الحساب بنجاح ✨");
 
         window.location.href = "index.html";
+
     }
 
 }
@@ -74,7 +79,18 @@ function addHelpRequest() {
 // التواصل مع صاحب المهارة
 function contactPerson() {
 
-    alert("يمكنك التواصل مع صاحب المهارة 🌟");
+    window.location.href = "contact.html";
+
+}
+
+
+
+// إرسال رسالة لصاحب المهارة
+function sendMessage() {
+
+    alert("تم إرسال رسالتك بنجاح 💌");
+
+    window.location.href = "skills.html";
 
 }
 
@@ -83,10 +99,10 @@ function contactPerson() {
 // تسجيل الخروج
 function logout() {
 
-    let confirmLogout = confirm("هل تريد تسجيل الخروج؟");
+    let answer = confirm("هل تريد تسجيل الخروج؟");
 
 
-    if (confirmLogout) {
+    if (answer) {
 
         window.location.href = "index.html";
 
